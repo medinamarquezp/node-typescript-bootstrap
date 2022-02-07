@@ -1,4 +1,4 @@
-const { pathsToModuleNameMapper } = require("ts-jest/utils");
+const { pathsToModuleNameMapper } = require("ts-jest");
 const { compilerOptions } = require("./tsconfig");
 
 module.exports = {
@@ -8,5 +8,5 @@ module.exports = {
     modulePaths: ["<rootDir>"],
     moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
     moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths),
-    testRegex: "(/tests/.*|(\\.|/)(test|spec))\\.ts?$",
+    testRegex: "(/tests/.*.(test|spec))\\.ts?$",
 };
