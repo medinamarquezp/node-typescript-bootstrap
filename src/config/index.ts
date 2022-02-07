@@ -12,6 +12,7 @@ export const app = {
     ENV: env,
     IS_DEV: env === dev,
     IS_PROD: env === prod,
+    API_VERSION: process.env.API_VERSION || "v1",
     PORT: Number(process.env.APP_PORT) || 5000,
     LOGS_PATH: `${rootPath}/${process.env.APP_LOGS_PATH || "logs"}`,
     LOG_LEVEL: process.env.APP_LOGS_LEVEL || "info"

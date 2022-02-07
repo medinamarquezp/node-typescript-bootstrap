@@ -1,14 +1,14 @@
 import express from "express";
-import { errorHandler } from "./handlers/error-handler";
+import { routes } from "./routes";
 import { loggerMiddleware } from "./middlewares/loggerMiddleware";
 
-const api = express();
+let api = express();
 
 // App middelwares
 api.use(express.json());
 api.use(loggerMiddleware);
 
-// Error handler
-errorHandler(api);
+// Routes
+api = routes(api);
 
 export default api;
